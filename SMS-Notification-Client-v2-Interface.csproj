@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnectorModule\BaseDatabaseConnector.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="SmsPrepareToSendRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SmsPrepareToSendRequest.Designer.cs">
+      <DependentUpon>SmsPrepareToSendRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseSmsResource.cs" />
     <Compile Include="Models\SmsNotificationDataResource.cs" />
@@ -68,6 +68,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SmsPrepareToSendRequest.resx">
+      <DependentUpon>SmsPrepareToSendRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
