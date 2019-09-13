@@ -50,60 +50,60 @@ namespace SMS_Notification_Client_v2_Interface.Models
 
 
         /// <summary>
-        /// The chart number of the patient that will be contacted
+        /// (retrieve from DB) The chart number of the patient that will be contacted
         /// </summary>
         public string chart { get; set; }
 
 
         /// <summary>
-        /// The patient's phone number that will be used to establish contact
+        /// (retrieve from DB) The patient's phone number that will be used to establish contact
         /// </summary>
         public string patient_number { get; set; }
 
 
         /// <summary>
-        /// The name of the patient that will be included in the message
+        /// (retrieve from DB) The name of the patient that will be included in the message
         /// </summary>
         public string name { get; set; }
 
 
         /// <summary>
-        /// The date that the message request is created
+        /// (Generated) The date that the message request is created
         /// </summary>
         public string date_created { get; set; }
 
         /// <summary>
-        /// This dictionary will hold the date, time, status, and timezone data
+        /// (retrieve from DB) This dictionary will hold the date, time, status, and timezone data
         /// of the patient's appointment
         /// </summary>
         public IDictionary<string, string> appointment { get; set; }
 
 
         /// <summary>
-        /// The name of the doctor that the patient will be seeing
+        /// (retrieve from DB) The name of the doctor that the patient will be seeing
         /// </summary>
         public string doctor { get; set; }
 
 
         /// <summary>
-        /// The message that will be sent to the patient
+        /// (Generated, mostly)The message that will be sent to the patient
         /// </summary>
         public string message { get; set; }
 
 
         /// <summary>
-        /// The name of the doctor's office that the patient is scheduled to arrive at
+        /// (retrieve from config) The name of the doctor's office that the patient is scheduled to arrive at
         /// </summary>
         public string doctor_office { get; set; }
 
         /// <summary>
-        /// The phone number designated for use by the client.
+        /// (retrieve from config) The phone number designated for use by the client.
         /// </summary>
         public string doctor_number { get; set; }
 
 
         /// <summary>
-        /// The account SID that will be used to identify the Twilio account to use for messaging
+        /// (retrieve from config) The account SID that will be used to identify the Twilio account to use for messaging
         /// </summary>
         public string acct { get; set; }
 
@@ -115,7 +115,7 @@ namespace SMS_Notification_Client_v2_Interface.Models
 
 
         /// <summary>
-        /// The secret name which will be used to tie the account SID and token together in Vault
+        /// (retrieve from config) The secret name which will be used to tie the account SID and token together in Vault
         /// </summary>
         public string secret_name { get; set; }
 
@@ -127,7 +127,7 @@ namespace SMS_Notification_Client_v2_Interface.Models
 
 
         /// <summary>
-        /// The scheduled time that messages should be delivered to the patient
+        /// (Generate where applicable)The scheduled time that messages should be delivered to the patient
         /// </summary>
         public string scheduled_time { get; set; }
     }

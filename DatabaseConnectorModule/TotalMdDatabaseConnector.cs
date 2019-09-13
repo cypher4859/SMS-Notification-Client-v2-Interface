@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 {
-    class BaseDatabaseConnector
+    class TotalMdDatabaseConnector : BaseDatabaseConnector
     {
         //Old Code
 
@@ -22,31 +22,5 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 
 
         //using (OdbcConnection connection = new OdbcConnection(connectionString)) { }
-
-
-        /// <summary>
-        /// The chart number of selected patient
-        /// </summary>
-        public string chart { get; set; }
-
-        /// <summary>
-        /// The appointment information of the patient
-        /// </summary>
-        public IDictionary<string,string> patient_appointment { get; set; }
-
-        /// <summary>
-        /// The name of the doctor that the patient will eventually see
-        /// </summary>
-        public string doctor_name { get; set; }
-
-        /// <summary>
-        /// The name of the selected patient
-        /// </summary>
-        public string patient_name { get; set; }
-
-        /// <summary>
-        /// The phone number of the selected patient
-        /// </summary>
-        public string patient_number { get; set; }
     }
 }
