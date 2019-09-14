@@ -8,6 +8,9 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 {
     class AltaPointDatabaseConnector : BaseDatabaseConnector
     {
+
+
+
         //Old Code
 
         //if (database_environ == "altapoint")

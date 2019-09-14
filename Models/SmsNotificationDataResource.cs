@@ -40,11 +40,6 @@ namespace SMS_Notification_Client_v2_Interface.Models
     {
         public SmsNotificationDataResource()
         {
-            this.date_created = date_created;   //this should be filled in with current date at this point
-            this.doctor_number = doctor_number; // This should be grabbed from a config file of some sort
-            this.acct = acct;                   // This should be filled in by some sort of config file, perhaps hashed
-            this.token = null;                  // This should never NOT be null
-            this.secret_name = secret_name;     // This should be filled in from config file
         }
 
 

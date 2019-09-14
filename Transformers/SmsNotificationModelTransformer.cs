@@ -10,7 +10,7 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
 {
     class SmsNotificationModelTransformer : BaseTransformer
     {
-        SmsNotificationDataResource mod;
+        public SmsNotificationDataResource mod = new SmsNotificationDataResource();
 
         public SmsNotificationModelTransformer() {
             //Make and use the DB Connector
@@ -26,8 +26,7 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
         }
 
         public SmsNotificationDataResource InjectData() {
-            SmsNotificationDataResource hydrated_obj = InjectConfigDataIntoModelResource(mod);
-            return mod;
+            return InjectConfigDataIntoModelResource(mod);
         }
 
         public SmsNotificationDataResource InjectConfigDataIntoModelResource(SmsNotificationDataResource model) {
