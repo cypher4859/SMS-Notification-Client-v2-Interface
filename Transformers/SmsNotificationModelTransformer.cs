@@ -10,26 +10,35 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
 {
     class SmsNotificationModelTransformer : BaseTransformer
     {
-        public SmsNotificationModelTransformer(SmsNotificationDataResource model) {
+        SmsNotificationDataResource mod;
+
+        public SmsNotificationModelTransformer() {
             //Make and use the DB Connector
             AltaPointDatabaseConnector connector = new AltaPointDatabaseConnector();
 
             //inject DB info into the model
-            model.chart = connector.chart;
-            model.appointment = connector.patient_appointment;
-            model.doctor = connector.doctor_name;
-            model.name = connector.patient_name;
-            model.patient_number = connector.patient_number;
+            mod.chart = connector.chart;
+            mod.appointment = connector.patient_appointment;
+            mod.doctor = connector.doctor_name;
+            mod.name = connector.patient_name;
+            mod.patient_number = connector.patient_number;
 
-            //Inject Config Data into the model
-
-            //return the transformed model
         }
 
-        public SmsNotificationDataResource InjectConfigDataIntoModelResource(SmsNotificationDataResource obj) {
+        public SmsNotificationDataResource InjectData() {
+            SmsNotificationDataResource hydrated_obj = InjectConfigDataIntoModelResource(mod);
+            return mod;
+        }
 
+        public SmsNotificationDataResource InjectConfigDataIntoModelResource(SmsNotificationDataResource model) {
+            //Inject Config Data into the model
+            model.acct = "";
+            model.doctor_number = "";
+            model.doctor_office = "";
+            model.message = "";
+            model.secret_name = "";
 
-            return obj;
+            return model;
         }
     }
 }

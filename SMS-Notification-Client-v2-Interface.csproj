@@ -66,6 +66,8 @@
     <Compile Include="Services\SmsDataResourceSendService.cs" />
     <Compile Include="Transformers\SmsNotificationModelTransformer.cs" />
     <Compile Include="Transformers\BaseTransformer.cs" />
+    <Compile Include="Validators\BaseResourceValidation.cs" />
+    <Compile Include="Validators\SmsNotificationResourceValidator.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,7 +97,6 @@
   <ItemGroup>
     <Folder Include="ModelValidationTests\" />
     <Folder Include="ServiceValidationTests\" />
-    <Folder Include="Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
