@@ -16,7 +16,7 @@ namespace SMS_Notification_Client_v2_Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SmsPrepareToSendRequest());
+            Application.Run(new RootPrepareToSendRequest());
         }
     }
 }

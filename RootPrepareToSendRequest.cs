@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SMS_Notification_Client_v2_Interface
 {
-    public partial class SmsPrepareToSendRequest : Form
+    public partial class RootPrepareToSendRequest : Form
     {
-        public SmsPrepareToSendRequest()
+        public RootPrepareToSendRequest()
         {
             InitializeComponent();
         }

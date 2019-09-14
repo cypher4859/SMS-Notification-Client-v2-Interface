@@ -52,11 +52,17 @@
     <Compile Include="DatabaseConnectorModule\AltaPointDatabaseConnector.cs" />
     <Compile Include="DatabaseConnectorModule\TotalMdDatabaseConnector.cs" />
     <Compile Include="DatabaseConnectorModule\BaseDatabaseConnector.cs" />
-    <Compile Include="SmsPrepareToSendRequest.cs">
+    <Compile Include="SmsPrepareToNotify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SmsPrepareToSendRequest.Designer.cs">
-      <DependentUpon>SmsPrepareToSendRequest.cs</DependentUpon>
+    <Compile Include="SmsPrepareToNotify.Designer.cs">
+      <DependentUpon>SmsPrepareToNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RootPrepareToSendRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RootPrepareToSendRequest.Designer.cs">
+      <DependentUpon>RootPrepareToSendRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseSmsResource.cs" />
     <Compile Include="Models\SmsNotificationDataResource.cs" />
@@ -68,6 +74,9 @@
     <Compile Include="Transformers\BaseTransformer.cs" />
     <Compile Include="Validators\BaseResourceValidation.cs" />
     <Compile Include="Validators\SmsNotificationResourceValidator.cs" />
+    <EmbeddedResource Include="SmsPrepareToNotify.resx">
+      <DependentUpon>SmsPrepareToNotify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,8 +86,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SmsPrepareToSendRequest.resx">
-      <DependentUpon>SmsPrepareToSendRequest.cs</DependentUpon>
+    <EmbeddedResource Include="RootPrepareToSendRequest.resx">
+      <DependentUpon>RootPrepareToSendRequest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
