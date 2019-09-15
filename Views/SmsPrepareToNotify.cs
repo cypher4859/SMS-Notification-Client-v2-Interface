@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace SMS_Notification_Client_v2_Interface
 {
-    public partial class RootPrepareToSendRequest : Form
+    public partial class SmsPrepareToNotify : Form
     {
-        public RootPrepareToSendRequest()
+        public SmsPrepareToNotify()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void CreateSendServiceAndSend()
         {
             //Create Service, it will:
             // 1. Create Model
@@ -26,6 +26,17 @@ namespace SMS_Notification_Client_v2_Interface
             // 3. Serialize
             SmsDataResourceSendService service = new SmsDataResourceSendService();
             _ = service.SendToServerAsync();
+        }
+
+        private void SmsPrepareToNotifySubmit_Click(object sender, EventArgs e)
+        {
+            CreateSendServiceAndSend();
+        }
+
+
+        private void CloseThisForm(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

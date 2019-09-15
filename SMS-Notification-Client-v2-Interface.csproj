@@ -52,17 +52,17 @@
     <Compile Include="DatabaseConnectorModule\AltaPointDatabaseConnector.cs" />
     <Compile Include="DatabaseConnectorModule\TotalMdDatabaseConnector.cs" />
     <Compile Include="DatabaseConnectorModule\BaseDatabaseConnector.cs" />
-    <Compile Include="SmsPrepareToNotify.cs">
+    <Compile Include="Views\SmsPrepareToNotify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SmsPrepareToNotify.Designer.cs">
+    <Compile Include="Views\SmsPrepareToNotify.Designer.cs">
       <DependentUpon>SmsPrepareToNotify.cs</DependentUpon>
     </Compile>
-    <Compile Include="RootPrepareToSendRequest.cs">
+    <Compile Include="Views\BaseInterface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RootPrepareToSendRequest.Designer.cs">
-      <DependentUpon>RootPrepareToSendRequest.cs</DependentUpon>
+    <Compile Include="Views\BaseInterface.Designer.cs">
+      <DependentUpon>BaseInterface.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseSmsResource.cs" />
     <Compile Include="Models\SmsNotificationDataResource.cs" />
@@ -74,7 +74,7 @@
     <Compile Include="Transformers\BaseTransformer.cs" />
     <Compile Include="Validators\BaseResourceValidation.cs" />
     <Compile Include="Validators\SmsNotificationResourceValidator.cs" />
-    <EmbeddedResource Include="SmsPrepareToNotify.resx">
+    <EmbeddedResource Include="Views\SmsPrepareToNotify.resx">
       <DependentUpon>SmsPrepareToNotify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -85,9 +85,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RootPrepareToSendRequest.resx">
-      <DependentUpon>RootPrepareToSendRequest.cs</DependentUpon>
+    <EmbeddedResource Include="Views\BaseInterface.resx">
+      <DependentUpon>BaseInterface.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -105,6 +106,54 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ServiceValidationTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotifyNow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_textsms_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_textsms_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_textsms_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_alarm_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_alarm_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_dashboard_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_dashboard_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_speaker_notes_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_speaker_notes_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_send_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_send_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_settings_applications_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_settings_applications_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_close_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_close_white_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
