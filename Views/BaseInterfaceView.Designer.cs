@@ -59,7 +59,7 @@
             this.BaseParentMenu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.BaseParentMenu.Location = new System.Drawing.Point(0, 0);
             this.BaseParentMenu.Name = "BaseParentMenu";
-            this.BaseParentMenu.Size = new System.Drawing.Size(218, 440);
+            this.BaseParentMenu.Size = new System.Drawing.Size(218, 460);
             this.BaseParentMenu.TabIndex = 1;
             this.BaseParentMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.BaseParentMenu_Paint);
             // 
@@ -68,7 +68,7 @@
             this.BaseViewParentArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BaseViewParentArea.Location = new System.Drawing.Point(218, 0);
             this.BaseViewParentArea.Name = "BaseViewParentArea";
-            this.BaseViewParentArea.Size = new System.Drawing.Size(494, 440);
+            this.BaseViewParentArea.Size = new System.Drawing.Size(548, 460);
             this.BaseViewParentArea.TabIndex = 2;
             // 
             // panel1
@@ -77,13 +77,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(218, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(494, 92);
+            this.panel1.Size = new System.Drawing.Size(548, 92);
             this.panel1.TabIndex = 5;
             // 
             // BaseLogo
             // 
             this.BaseLogo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BaseLogo.Location = new System.Drawing.Point(329, 0);
+            this.BaseLogo.Location = new System.Drawing.Point(383, 0);
             this.BaseLogo.Name = "BaseLogo";
             this.BaseLogo.Size = new System.Drawing.Size(165, 92);
             this.BaseLogo.TabIndex = 3;
@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(712, 440);
+            this.ClientSize = new System.Drawing.Size(766, 460);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BaseViewParentArea);
             this.Controls.Add(this.BaseParentMenu);

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using SMS_Notification_Client_v2_Interface.DatabaseConnectorModule;
 using SMS_Notification_Client_v2_Interface.Models;
+
 
 namespace SMS_Notification_Client_v2_Interface.Transformers
 {
@@ -12,16 +14,26 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
     {
         public SmsNotificationDataResource mod = new SmsNotificationDataResource();
 
-        public SmsNotificationModelTransformer() {
-            //Make and use the DB Connector
-            AltaPointDatabaseConnector connector = new AltaPointDatabaseConnector();
+        public SmsNotificationModelTransformer(Dictionary<string, string> AppointmentData) {
+            
 
+            //This will need to inject one at a time the database info into the model. 
+            //One model for every patient. Thus, we should have a collection of serialized models.
+            //Perhaps move the database part before the transformer. So it would loop over the collection from
+            //the database and for each element it will pass it to the transformer. 
+            //Everything else stays the same
+            
             //inject DB info into the model
-            mod.chart = connector.chart;
-            mod.appointment = connector.patient_appointment;
-            mod.doctor = connector.doctor_name;
-            mod.name = connector.patient_name;
-            mod.patient_number = connector.patient_number;
+            mod.chart = AppointmentData["chart"];
+            mod.appointment = new Dictionary<string,string>() {
+                { "time", AppointmentData["patient_appointment_time"] },
+                { "date", AppointmentData["patient_appointment_date"] },
+                { "status", "" },       // This should be empty
+                { "timezone", "" }      // Get this from config!
+            };
+            mod.doctor = AppointmentData["doctor_name"];
+            mod.name = AppointmentData["patient_name"];
+            mod.patient_number = AppointmentData["patient_number"];
 
         }
 

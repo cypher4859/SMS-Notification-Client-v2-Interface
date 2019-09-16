@@ -52,17 +52,17 @@
     <Compile Include="DatabaseConnectorModule\AltaPointDatabaseConnector.cs" />
     <Compile Include="DatabaseConnectorModule\TotalMdDatabaseConnector.cs" />
     <Compile Include="DatabaseConnectorModule\BaseDatabaseConnector.cs" />
-    <Compile Include="Views\SmsPrepareToNotify.cs">
+    <Compile Include="Views\SmsPrepareToNotifyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\SmsPrepareToNotify.Designer.cs">
-      <DependentUpon>SmsPrepareToNotify.cs</DependentUpon>
+    <Compile Include="Views\SmsPrepareToNotifyView.Designer.cs">
+      <DependentUpon>SmsPrepareToNotifyView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BaseInterface.cs">
+    <Compile Include="Views\BaseInterfaceView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\BaseInterface.Designer.cs">
-      <DependentUpon>BaseInterface.cs</DependentUpon>
+    <Compile Include="Views\BaseInterfaceView.Designer.cs">
+      <DependentUpon>BaseInterfaceView.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseSmsResource.cs" />
     <Compile Include="Models\SmsNotificationDataResource.cs" />
@@ -74,8 +74,8 @@
     <Compile Include="Transformers\BaseTransformer.cs" />
     <Compile Include="Validators\BaseResourceValidation.cs" />
     <Compile Include="Validators\SmsNotificationResourceValidator.cs" />
-    <EmbeddedResource Include="Views\SmsPrepareToNotify.resx">
-      <DependentUpon>SmsPrepareToNotify.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SmsPrepareToNotifyView.resx">
+      <DependentUpon>SmsPrepareToNotifyView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,8 +87,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\BaseInterface.resx">
-      <DependentUpon>BaseInterface.cs</DependentUpon>
+    <EmbeddedResource Include="Views\BaseInterfaceView.resx">
+      <DependentUpon>BaseInterfaceView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
