@@ -25,13 +25,7 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
             
             //inject DB info into the model
             mod.chart = AppointmentData["chart"];
-            mod.appointment = new Dictionary<string,string>() {
-                { "time", AppointmentData["patient_appointment_time"] },
-                { "date", AppointmentData["patient_appointment_date"] },
-                { "status", "" },       // This should be empty
-                { "timezone", "" }      // Get this from config!
-            };
-            mod.doctor = AppointmentData["doctor_name"];
+            mod.appointment = AppointmentData["appointment"];
             mod.name = AppointmentData["patient_name"];
             mod.patient_number = AppointmentData["patient_number"];
 
