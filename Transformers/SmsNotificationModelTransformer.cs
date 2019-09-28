@@ -14,7 +14,7 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
     {
         public SmsNotificationDataResource mod = new SmsNotificationDataResource();
 
-        public SmsNotificationModelTransformer(Dictionary<string, string> AppointmentData) {
+        public SmsNotificationModelTransformer(Dictionary<string, dynamic> AppointmentData) {
             
 
             //This will need to inject one at a time the database info into the model. 
