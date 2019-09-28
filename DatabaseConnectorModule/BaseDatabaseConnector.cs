@@ -24,19 +24,11 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
         //using (OdbcConnection connection = new OdbcConnection(connectionString)) { }
 
         public BaseDatabaseConnector() {
-            chart = "";
-            patient_appointment = new Dictionary<string, string>
-            {
-                { "date", "some date" },
-                { "time", "4:20" },
-                { "status", "ConfirmedBitches!" },
-                { "timezone", "EastCoastBitches" }
-            };
-
-            doctor_name = "";
-            patient_name = "";
-            patient_number = "";
+            
         }
+
+        public List<Dictionary<string, dynamic>> CollectionOfAppointments { get; set; }
+
 
         /// <summary>
         /// The chart number of selected patient
