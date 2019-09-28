@@ -14,7 +14,7 @@ namespace SMS_Notification_Client_v2_Interface.Services
 {
     class SmsDataResourceSendService : BaseService
     {
-        //Create the model
+        //Create the list that will hold models
         IList<SmsNotificationDataResource> ListOfDataPackages { get; set; }
 
 
@@ -22,34 +22,46 @@ namespace SMS_Notification_Client_v2_Interface.Services
         //inject the model
         public SmsDataResourceSendService(SelectionRange DateSelection) {
             ListOfDataPackages = new List<SmsNotificationDataResource>();
-            SmsNotificationDataResource DataPackage = new SmsNotificationDataResource();
+            
 
-            //Make and use the DB Connector
-            AltaPointDatabaseConnector connector = new AltaPointDatabaseConnector(DateSelection);
+            // Make and use the DB Connector
+            // It will send the same DateSelection regardless.
+            string dbEnvironment = "alta";
+            BaseDatabaseConnector connector = new BaseDatabaseConnector();
+
+            if (dbEnvironment == "alta") {
+                connector = new AltaPointDatabaseConnector(DateSelection);
+            }
+            else if (dbEnvironment == "total") {
+               connector = new TotalMdDatabaseConnector(DateSelection);
+            }
+            else if (dbEnvironment == "Some other bullshit") {
+
+            }
+             
 
             //Iterate over a collection of dictionaries and send to the transformer.
-            foreach (Dictionary<string, string> PatientAppointment in connector.CollectionOfAppointments)
+            foreach (Dictionary<string, dynamic> PatientAppointment in connector.CollectionOfAppointments)
             {
+                SmsNotificationDataResource DataPackage = new SmsNotificationDataResource();
                 SmsNotificationModelTransformer transformer = new SmsNotificationModelTransformer(PatientAppointment);
                 DataPackage = transformer.InjectData();
-                ListOfDataPackages.Add(DataPackage);
+                ListOfDataPackages.Add(DataPackage);            // Add to the total list of packages
             }
 
         }
 
         //Serialize the model
         public string SerializeToJson(IList<SmsNotificationDataResource> obj) {
-            string SerializedDataPackage = JsonConvert.SerializeObject(obj);
-            return SerializedDataPackage;
+            return JsonConvert.SerializeObject(obj);
         }
 
         //Send the model
         public async Task SendToServerAsync() {
-            string PreparedDataPayload = this.SerializeToJson(this.ListOfDataPackages);
-
             //Make HTTP Request
             using (var client = new HttpClient())
             {
+                string PreparedDataPayload = this.SerializeToJson(this.ListOfDataPackages);
                 var response = await client.PostAsync(
                     "SomeURL",
                     new StringContent(PreparedDataPayload, Encoding.UTF8, "application/json"));

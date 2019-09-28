@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 {
     class TotalMdDatabaseConnector : BaseDatabaseConnector
     {
+
+        public TotalMdDatabaseConnector(SelectionRange DateRange)
+        {
+            //connect to DB
+            //get collection of appointments
+            //assign to the list for subsequent access
+        }
         //Old Code
 
         //if (database_environ == "altapoint")
