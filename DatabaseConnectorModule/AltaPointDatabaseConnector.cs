@@ -13,9 +13,35 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
             //connect to DB
             //get collection of appointments
             //assign to the list for subsequent access
+
+            chart = "someChart";
+            patient_appointment = new Dictionary<string, string>
+            {
+                { "date", "some date" },
+                { "time", "4:20" },
+                { "status", "ConfirmedBitches!" },
+                { "timezone", "EastCoastBitches" }
+            };
+
+            doctor_name = "some doc";
+            patient_name = "some patient";
+            patient_number = "3044324213";
+
+            CollectionOfAppointments = new List<Dictionary<string, dynamic>>();
+            CollectionOfAppointments.Add(GetDict());
+
         }
 
-        public IList<IDictionary<string, string>> CollectionOfAppointments { get; set;}
+        public Dictionary<string, dynamic> GetDict() {
+            
+            return new Dictionary<string, dynamic>() {
+                { "chart" , chart},
+                { "appointment", patient_appointment},
+                { "doctor_name", doctor_name},
+                { "patient_name", patient_name},
+                { "patient_number", patient_number}
+            };
+        }
 
         //Old Code
 
