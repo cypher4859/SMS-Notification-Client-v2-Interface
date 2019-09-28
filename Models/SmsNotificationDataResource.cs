@@ -71,7 +71,7 @@ namespace SMS_Notification_Client_v2_Interface.Models
         /// (retrieve from DB) This dictionary will hold the date, time, status, and timezone data
         /// of the patient's appointment
         /// </summary>
-        public IDictionary<string, string> appointment { get; set; }
+        public IDictionary<string, dynamic> appointment { get; set; }
 
 
         /// <summary>
