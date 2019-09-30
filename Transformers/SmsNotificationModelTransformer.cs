@@ -31,9 +31,7 @@ namespace SMS_Notification_Client_v2_Interface.Transformers
 
         }
 
-        public SmsNotificationDataResource InjectData() {
-            return InjectConfigDataIntoModelResource(mod);
-        }
+        public override BaseSmsResource InjectData => InjectConfigDataIntoModelResource(mod);
 
         public SmsNotificationDataResource InjectConfigDataIntoModelResource(SmsNotificationDataResource model) {
             //Inject Config Data into the model
