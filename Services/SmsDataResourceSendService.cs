@@ -14,38 +14,31 @@ namespace SMS_Notification_Client_v2_Interface.Services
 {
     class SmsDataResourceSendService : BaseService
     {
-        //Create the list that will hold models
-        IList<SmsNotificationDataResource> ListOfDataPackages { get; set; }
-
-
+        
         //Initialize the model and 
         //inject the model
-        public SmsDataResourceSendService(SelectionRange DateSelection) {
+        public SmsDataResourceSendService(SelectionRange DateSelection, bool IsScheduled) {
             ListOfDataPackages = new List<SmsNotificationDataResource>();
-            
+            connector.DateSelection = DateSelection;
 
-            // Make and use the DB Connector
-            // It will send the same DateSelection regardless.
-            string dbEnvironment = "alta";
-            BaseDatabaseConnector connector = new BaseDatabaseConnector();
+            BaseTransformer transformer;
 
-            if (dbEnvironment == "alta") {
-                connector = new AltaPointDatabaseConnector(DateSelection);
-            }
-            else if (dbEnvironment == "total") {
-               connector = new TotalMdDatabaseConnector(DateSelection);
-            }
-            else if (dbEnvironment == "Some other bullshit") {
-
-            }
-             
 
             //Iterate over a collection of dictionaries and send to the transformer.
             foreach (Dictionary<string, dynamic> PatientAppointment in connector.CollectionOfAppointments)
             {
                 SmsNotificationDataResource DataPackage = new SmsNotificationDataResource();
-                SmsNotificationModelTransformer transformer = new SmsNotificationModelTransformer(PatientAppointment);
-                DataPackage = transformer.InjectData();
+                if (IsScheduled) {
+                    //This needs fixed and tweaked to accomodate the scheduled part
+                    transformer = new SmsNotificationModelTransformer(PatientAppointment);
+                    DataPackage = (SmsNotificationDataResource)transformer.InjectData;
+                }
+                else {
+                    transformer = new SmsNotificationModelTransformer(PatientAppointment);
+                    DataPackage = (SmsNotificationDataResource)transformer.InjectData;
+                }
+
+                
                 ListOfDataPackages.Add(DataPackage);            // Add to the total list of packages
             }
 
