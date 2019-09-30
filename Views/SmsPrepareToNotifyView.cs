@@ -29,7 +29,8 @@ namespace SMS_Notification_Client_v2_Interface
             // 1. Create Model
             // 2. Initialize/Inject
             // 3. Serialize
-            SmsDataResourceSendService service = new SmsDataResourceSendService(DateRange);
+            IsScheduled = false;
+            SmsDataResourceSendService service = new SmsDataResourceSendService(DateRange, IsScheduled);
             SmsPrepareToNotifyProgressBar.Increment(30);
 
             _ = service.SendToServerAsync();
@@ -46,5 +47,7 @@ namespace SMS_Notification_Client_v2_Interface
         {
             this.Close();
         }
+
+        public bool IsScheduled { get; set; }
     }
 }
