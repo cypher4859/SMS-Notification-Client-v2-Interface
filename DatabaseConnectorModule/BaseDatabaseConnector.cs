@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 {
@@ -29,6 +30,7 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 
         public List<Dictionary<string, dynamic>> CollectionOfAppointments { get; set; }
 
+        public SelectionRange DateSelection { get; set; }
 
         /// <summary>
         /// The chart number of selected patient

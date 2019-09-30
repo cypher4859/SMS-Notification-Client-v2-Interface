@@ -10,11 +10,9 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
     class TotalMdDatabaseConnector : BaseDatabaseConnector
     {
 
-        public TotalMdDatabaseConnector(SelectionRange DateRange)
+        public TotalMdDatabaseConnector()
         {
-            //connect to DB
-            //get collection of appointments
-            //assign to the list for subsequent access
+
         }
         //Old Code
 

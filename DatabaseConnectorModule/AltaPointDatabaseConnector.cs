@@ -9,7 +9,7 @@ namespace SMS_Notification_Client_v2_Interface.DatabaseConnectorModule
 {
     class AltaPointDatabaseConnector : BaseDatabaseConnector
     {
-        public AltaPointDatabaseConnector(SelectionRange DateRange) {
+        public AltaPointDatabaseConnector() {
             //connect to DB
             //get collection of appointments
             //assign to the list for subsequent access
